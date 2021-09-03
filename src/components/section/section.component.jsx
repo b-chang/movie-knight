@@ -1,10 +1,22 @@
 import React from 'react';
 import './section.styles.scss';
 import Poster from '../poster/poster.component';
+import Selector from '../selector/selector.component';
 
-const Section = ({ title, movies: { results } }) => (
+const Section = ({ title, movies: { results }, selections }) => (
   <div className="section">
-    {title ? <p className="section-title">{title}</p> : ''}
+    {title ? (
+      <div className="column-header">
+        <h2>{title}</h2>
+        <div className="selector">
+          {
+            selections ? selections.map((select) => (
+              <Selector className={`${select}-selector`}>{select}</Selector>
+            )) : ''
+          }
+        </div>
+      </div>
+    ) : ''}
     <div className="movie-poster">
       {
         results ? results.map(({

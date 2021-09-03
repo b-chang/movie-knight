@@ -23,3 +23,18 @@ p {
   font-size: 0.75rem;
   font-weight: bolder;
 }
+
+.column-header {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  flex: 0 0 9em;
+  text-align: center;
+}
+
+.selector {
+  display: flex;
+  justify-content: space-evenly;
+}

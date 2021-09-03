@@ -7,9 +7,9 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <Section title="What's Popular" className="section" movies={state.movies || ''} />
-      <Section title="Top Rated" className="section" movies={state.topRatedMovies || ''} />
-      <Section title="Trending Movies" className="section" movies={state.trendingMovies || ''} />
+      <Section title="What's Popular" className="section" selections={['Streaming', 'On TV', 'For Rent', 'In Theaters']} movies={state.movies || ''} />
+      <Section title="Top Rated" className="section" selections={['Movies', 'TV']} movies={state.topRatedMovies || ''} />
+      <Section title="Trending Movies" className="section" selections={['Today', 'This Week']} movies={state.trendingMovies || ''} />
     </div>
   );
 };
