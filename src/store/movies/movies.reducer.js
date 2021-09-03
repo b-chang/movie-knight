@@ -1,15 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addMovies, addTopRatedMovies, addTrendingMovies } from './movies.actions';
+import { addPopularMovies, addTopRatedMovies, addTrendingMovies } from './movies.actions';
 
 const INITIAL_STATE = {
-  movies: {}
 };
 
 const moviesSliceConfig = {
   name: 'movies',
   initialState: INITIAL_STATE,
   reducers: {
-    addMovies,
+    addPopularMovies,
     addTopRatedMovies,
     addTrendingMovies
   }

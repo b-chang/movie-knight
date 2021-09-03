@@ -10,8 +10,8 @@ const Section = ({ title, movies: { results }, selections }) => (
         <h2>{title}</h2>
         <div className="selector">
           {
-            selections ? selections.map((select) => (
-              <Selector className={`${select}-selector`}>{select}</Selector>
+            selections ? selections.map(({ id, value }) => (
+              <Selector key={id} className={`${value}-selector`}>{value}</Selector>
             )) : ''
           }
         </div>

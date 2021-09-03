@@ -1,12 +1,12 @@
 // adding movies to state
-const addMovies = (state, action) => {
+const addPopularMovies = (state, action) => {
   // console.log('logging state', {state, action})
   // const { movies } = action.payload;
-  const movies = action.payload;
+  const addPopularMovies = action.payload;
   // console.log(movies)
   return {
     ...state,
-    movies
+    addPopularMovies
   };
 };
 
@@ -28,7 +28,7 @@ const addTrendingMovies = (state, action) => {
 };
 
 export {
-  addMovies,
+  addPopularMovies,
   addTopRatedMovies,
   addTrendingMovies
 };
