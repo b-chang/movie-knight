@@ -1,0 +1,151 @@
+@mixin btn {
+  text-decoration: none; 
+  display: inline-block;
+  margin: 0.3rem 0;
+  padding: 0.8rem 1rem;
+  font-size: 1.92rem;
+  border-radius: 5px;
+  border: none;
+}
+
+@mixin btn-primary {
+  background: #007bff;
+  color: white; 
+}
+
+@mixin btn-success {
+  background: #28a745;
+  color: white;
+}
+
+@mixin btn-warning {
+  background: #ffc107;
+  color: black;
+}
+
+@mixin btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+@mixin btn-info {
+  background: #17a2b8;
+  color: white;
+}
+
+@mixin btn-mute {
+  background: #edecf1;
+  color: white;
+}
+
+@mixin btn-dark {
+  background: #575c62;
+  color: white;
+}
+
+
+/* flex justify content */
+@mixin flex-jc-fs {
+  display: flex;;
+  justify-content: flex-start;
+}
+
+@mixin flex-jc-c {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-jc-fe {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin flex-jc-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-jc-sb-fe {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin flex-jc-sa {
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin flex-jc-se {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* flex align items */
+@mixin flex-align-s {
+  display: flex;;
+  align-items: flex-start;
+}
+
+@mixin flex-align-fs {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-align-c {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin flex-align-fe {
+  display: flex;
+  align-items: space-between;
+}
+
+@mixin flex-align-bl {
+  display: flex;
+  align-items: space-around;
+}
+
+/* flex direction */
+@mixin flex-d {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-d-rr {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@mixin flex-d-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-d-col-r {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* flex align self */
+
+@mixin flex-as-fs {
+  display: flex;
+}
+
+@mixin flex-start { 
+  align-self: flex-start; 
+}
+@mixin flex-end { 
+  align-self: flex-end; 
+}
+@mixin flex-center { 
+  align-self: center; 
+}
+@mixin flex-baseline { 
+  align-self: baseline; 
+}
+@mixin flex-stretch { 
+  align-self: stretch; 
+}
