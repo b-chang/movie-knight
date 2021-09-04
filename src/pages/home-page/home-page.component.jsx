@@ -4,6 +4,7 @@ import Section from '../../components/section/section.component';
 
 const HomePage = () => {
   const state = useSelector((state) => state.moviesReducer);
+  const tvState = useSelector((state) => state.tvReducer);
   const options = {
     optionsPopular: [
       { id: 1, value: 'Streaming' },
@@ -40,6 +41,11 @@ const HomePage = () => {
         className="section"
         selections={options.Trending}
         movies={state.trendingMovies || ''}
+      />
+      <Section
+        title="Popular TV"
+        className="section"
+        movies={tvState.popularTV || ''}
       />
     </div>
   );

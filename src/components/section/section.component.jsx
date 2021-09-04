@@ -27,7 +27,7 @@ const Section = ({ title, movies: { results }, selections }) => {
                   key={id}
                   className={`${value}-selector`}
                   showSelection={handleSelection}
-                  showMedia={showMedia ? showMedia : ''}
+                  showMedia={showMedia}
                 >
                   {value}
                 </Selector>

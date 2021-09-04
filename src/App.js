@@ -19,7 +19,6 @@ const App = () => {
     return json;
   };
 
-  // use one useEffect; brackets [] or it'll be called all the time
   useEffect(() => {
     fetchMedia(generateUrl('movie', 'popular', '2'))
       .then((movies) => dispatch(moviesSlice.actions.addPopularMovies(movies)));
