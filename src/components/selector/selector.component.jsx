@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './selector.styles.scss';
 
-const Selector = ({ className, children, showSelection }) => {
-  const [mediaSelection, setMediaSelection] = useState(
-    { selectionHasChange: false, selection: 'Streaming' }
-  );
-
+const Selector = ({
+  className, children, showSelection, showMedia
+}) => {
   const buttonHandler = (e) => {
-    setMediaSelection((prevState) => (
-      { selectionHasChange: !prevState.selectionHasChange, selection: e.value }
-    ));
-  };
+    if (e.value === showMedia.selection) {
+      showMedia.selectionHasChange = false;
+    }
 
-  useEffect(() => {
-    showSelection(mediaSelection);
-  }, [mediaSelection]);
+    if (e.value !== showMedia.selection) {
+      showMedia.selection = e.value;
+      showMedia.selectionHasChange = true;
+    }
+    showSelection(showMedia);
+  };
 
   return (
     <button
