@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './section.styles.scss';
-import Poster from '../poster/poster.component';
 import PosterGroup from '../poster-group/poster-group.components';
-import Selector from '../selector/selector.component';
 import SelectionGroup from '../selection-group/selection-group.component';
 import MEDIA_MAP from './section.constants';
 
-const Section = ({ title, movies: { results }, selections }) => {
+const Section = ({
+  title, movies: { results }, selections, type
+}) => {
   const [showMedia, setShowMedia] = useState(
     { selectionHasChange: false, selection: 'Streaming' }
   );
@@ -31,6 +31,7 @@ const Section = ({ title, movies: { results }, selections }) => {
             selections={selections}
             handleSelection={handleSelection}
             showMedia={showMedia}
+            mediaOptions={MEDIA_MAP[type] || ''}
           />
         </div>
       ) : ''}

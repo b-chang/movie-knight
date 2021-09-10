@@ -1,20 +1,22 @@
 import React from 'react';
 import Selector from '../selector/selector.component';
 
-const SelectionGroup = ({ selections, handleSelection, showMedia }) => (
+const SelectionGroup = ({
+  handleSelection, showMedia, mediaOptions: { options }
+}) => (
   <div className="selection-group">
     {
-    selections ? selections.map(({ id, value }) => (
-      <Selector
-        key={id}
-        className={`${value}-selector`}
-        handleSelection={handleSelection}
-        showMedia={showMedia}
-      >
-        {value}
-      </Selector>
-    )) : ''
-}
+      options ? options.map(({ id, value }) => (
+        <Selector
+          key={id}
+          className={`${value}-selector`}
+          handleSelection={handleSelection}
+          showMedia={showMedia}
+        >
+          {value}
+        </Selector>
+      )) : ''
+    }
   </div>
 );
 
