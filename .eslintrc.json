@@ -1,0 +1,33 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "eol-last": [
+            "error",
+            "never"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "no-console": 0,
+        "react/prop-types": "off",
+        "no-underscore-dangle": "off",
+        "no-nested-ternary": 0,
+        "no-shadow": 0,
+        "camelcase": 0,
+        "no-unused-vars": 0,
+        "no-undef": 0,
+        "no-param-reassign": 0,
+        "no-unused-expressions": 0,
+        "no-unneeded-ternary": 0
+    }
+}

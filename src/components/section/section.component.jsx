@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './section.styles.scss';
 import Poster from '../poster/poster.component';
+import PosterGroup from '../poster-group/poster-group.components';
 import Selector from '../selector/selector.component';
 import SelectionGroup from '../selection-group/selection-group.component';
-// import Header from '../header/header.components';
-
-// const MediaTypeMap = {
-//   'PopularMovies': {
-//     options: [
-//       { id: 1, value: 'Streaming' },
-//       { id: 2, value: 'On TV' },
-//       { id: 3, value: 'For Rent' },
-//       { id: 4, value: 'In Theaters' }
-//     ]
-//   }
-// }
+import MEDIA_MAP from './section.constants';
 
 const Section = ({ title, movies: { results }, selections }) => {
   const [showMedia, setShowMedia] = useState(
@@ -44,23 +34,7 @@ const Section = ({ title, movies: { results }, selections }) => {
           />
         </div>
       ) : ''}
-      <div className="movie-poster">
-        {
-          results ? results.map(({
-            id, title, release_date, poster_path
-          }) => {
-            const img = `https://image.tmdb.org/t/p/w154/${poster_path}`;
-            return (
-              <Poster
-                key={id}
-                title={title}
-                releaseDate={release_date}
-                poster={img}
-              />
-            );
-          }) : ''
-        }
-      </div>
+      <PosterGroup results={results} />
     </div>
   );
 };
