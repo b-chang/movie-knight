@@ -2,14 +2,31 @@ import React, { useState, useEffect } from 'react';
 import './section.styles.scss';
 import Poster from '../poster/poster.component';
 import Selector from '../selector/selector.component';
+import SelectionGroup from '../selection-group/selection-group.component';
+// import Header from '../header/header.components';
+
+// const MediaTypeMap = {
+//   'PopularMovies': {
+//     options: [
+//       { id: 1, value: 'Streaming' },
+//       { id: 2, value: 'On TV' },
+//       { id: 3, value: 'For Rent' },
+//       { id: 4, value: 'In Theaters' }
+//     ]
+//   }
+// }
 
 const Section = ({ title, movies: { results }, selections }) => {
   const [showMedia, setShowMedia] = useState(
-    { selectionHasChange: false, selection: 'Streaming', results }
+    { selectionHasChange: false, selection: 'Streaming' }
   );
 
+  // same as component did mount
+  // whenever showMedia states then run this useEffect
   useEffect(() => {
-  }, [showMedia]);
+    // what you want to run when useEffect runs
+    // make api call with category and type
+  }, []);
 
   const handleSelection = (media) => {
     setShowMedia((prevState) => prevState);
@@ -20,20 +37,11 @@ const Section = ({ title, movies: { results }, selections }) => {
       {title ? (
         <div className="column-header">
           <h2>{title}</h2>
-          <div className="selector">
-            {
-              selections ? selections.map(({ id, value }) => (
-                <Selector
-                  key={id}
-                  className={`${value}-selector`}
-                  showSelection={handleSelection}
-                  showMedia={showMedia}
-                >
-                  {value}
-                </Selector>
-              )) : ''
-            }
-          </div>
+          <SelectionGroup
+            selections={selections}
+            handleSelection={handleSelection}
+            showMedia={showMedia}
+          />
         </div>
       ) : ''}
       <div className="movie-poster">
