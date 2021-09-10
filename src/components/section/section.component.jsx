@@ -5,7 +5,7 @@ import SelectionGroup from '../selection-group/selection-group.component';
 import MEDIA_MAP from './section.constants';
 
 const Section = ({
-  title, movies: { results }, type
+  movies: { results }, type
 }) => {
   const [showMedia, setShowMedia] = useState(
     { selectionHasChange: false, selection: 'Streaming' }
@@ -21,6 +21,7 @@ const Section = ({
   const handleSelection = (media) => {
     setShowMedia((prevState) => prevState);
   };
+  const { title } = MEDIA_MAP[type];
 
   return (
     <div className="section">

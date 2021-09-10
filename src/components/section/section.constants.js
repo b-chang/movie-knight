@@ -1,5 +1,6 @@
 const MEDIA_MAP = {
   optionsPopular: {
+    title: 'What\'s Popular',
     options: [
       { id: 1, value: 'Streaming' },
       { id: 2, value: 'On TV' },
@@ -8,12 +9,14 @@ const MEDIA_MAP = {
     ]
   },
   optionsTopRated: {
+    title: 'Top Rated',
     options: [
       { id: 1, value: 'Movies' },
       { id: 2, value: 'TV' }
     ]
   },
   optionsTrending: {
+    title: 'Trending Movies',
     options: [
       { id: 1, value: 'Today' },
       { id: 2, value: 'This Week' }
