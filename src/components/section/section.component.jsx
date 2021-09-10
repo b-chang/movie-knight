@@ -5,7 +5,7 @@ import SelectionGroup from '../selection-group/selection-group.component';
 import MEDIA_MAP from './section.constants';
 
 const Section = ({
-  title, movies: { results }, selections, type
+  title, movies: { results }, type
 }) => {
   const [showMedia, setShowMedia] = useState(
     { selectionHasChange: false, selection: 'Streaming' }
@@ -28,7 +28,6 @@ const Section = ({
         <div className="column-header">
           <h2>{title}</h2>
           <SelectionGroup
-            selections={selections}
             handleSelection={handleSelection}
             showMedia={showMedia}
             mediaOptions={MEDIA_MAP[type] || ''}
