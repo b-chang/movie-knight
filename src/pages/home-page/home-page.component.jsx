@@ -3,22 +3,21 @@ import { useSelector } from 'react-redux';
 import Section from '../../components/section/section.component';
 
 const HomePage = () => {
-  const state = useSelector((state) => state.moviesReducer);
-  const tvState = useSelector((state) => state.tvReducer);
-
+  const state = useSelector((state) => state);
+  const { moviesReducer, moviesTopRatedReducer, moviesTrendingReducer } = state;
   return (
     <div className="home-page">
       <Section
         type="optionsPopular"
-        movies={state.addPopularMovies || ''}
+        movies={moviesReducer || ''}
       />
       <Section
         type="optionsTopRated"
-        movies={state.topRatedMovies || ''}
+        movies={moviesTopRatedReducer || ''}
       />
       <Section
         type="optionsTrending"
-        movies={state.trendingMovies || ''}
+        movies={moviesTrendingReducer || ''}
       />
     </div>
   );

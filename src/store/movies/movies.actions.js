@@ -1,30 +1,31 @@
-// adding movies to state
-const addPopularMovies = (state, action) => {
-  // console.log('logging state', {state, action})
-  // const { movies } = action.payload;
-  const addPopularMovies = action.payload;
-  // console.log(movies)
-  return {
-    ...state,
-    addPopularMovies
-  };
+import axios from 'axios';
+
+const { REACT_APP_API_KEY } = process.env;
+const generateUrl = (type, category, page) => `https://api.themoviedb.org/3/${type}/${category}?api_key=${REACT_APP_API_KEY}&language=en-US&page=${page}`;
+
+const addPopularMovies = (type, payload) => async (dispatch, getState) => {
+  const response = await axios.get(generateUrl('movie', 'popular', '2'));
+  dispatch({
+    type: 'FETCH_POPULAR_MOVIES',
+    payload: response.data
+  });
 };
 
-const addTopRatedMovies = (state, action) => {
-  // console.log('logging top rated movies', {state, action})
-  const topRatedMovies = action.payload;
-  return {
-    ...state,
-    topRatedMovies
-  };
+const addTopRatedMovies = (type, payload) => async (dispatch, getState) => {
+  const response = await axios.get(generateUrl('movie', 'top_rated', '3'));
+  dispatch({
+    type: 'FETCH_TOP_RATED_MOVIES',
+    payload: response.data
+  });
 };
 
-const addTrendingMovies = (state, action) => {
-  const trendingMovies = action.payload;
-  return {
-    ...state,
-    trendingMovies
-  };
+const addTrendingMovies = (type, payload) => async (dispatch, getState) => {
+  const response = await axios.get(generateUrl('trending', 'movie/day', '1'));
+  console.log('RETRIEVING MOVIES', response.data);
+  dispatch({
+    type: 'FETCH_TRENDING_MOVIES',
+    payload: response.data
+  });
 };
 
 export {

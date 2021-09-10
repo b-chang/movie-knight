@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './selector.styles.scss';
 
 const Selector = ({
-  className, children, showSelection, showMedia
+  className, children, handleSelection, showMedia
 }) => {
   const buttonHandler = (e) => {
     if (e.value === showMedia.selection) {
@@ -13,7 +13,7 @@ const Selector = ({
       showMedia.selection = e.value;
       showMedia.selectionHasChange = true;
     }
-    showSelection(showMedia);
+    handleSelection(showMedia);
   };
 
   return (

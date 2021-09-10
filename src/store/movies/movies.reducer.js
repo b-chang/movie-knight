@@ -1,18 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { addPopularMovies, addTopRatedMovies, addTrendingMovies } from './movies.actions';
+const INITIAL_STATE = {};
 
-const INITIAL_STATE = {
-};
-
-const moviesSliceConfig = {
-  name: 'movies',
-  initialState: INITIAL_STATE,
-  reducers: {
-    addPopularMovies,
-    addTopRatedMovies,
-    addTrendingMovies
+const moviesReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case 'FETCH_POPULAR_MOVIES':
+      return action.payload;
+    default:
+      return state;
   }
 };
 
-export const moviesSlice = createSlice(moviesSliceConfig);
-export default moviesSlice.reducer;
+const moviesTopRatedReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case 'FETCH_TOP_RATED_MOVIES':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+const moviesTrendingReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case 'FETCH_TRENDING_MOVIES':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export {
+  moviesReducer,
+  moviesTopRatedReducer,
+  moviesTrendingReducer
+};
