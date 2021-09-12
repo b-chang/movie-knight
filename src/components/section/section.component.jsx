@@ -7,9 +7,7 @@ import MEDIA_MAP from './section.constants';
 const Section = ({
   movies: { results }, type
 }) => {
-  const [showMedia, setShowMedia] = useState(
-    { selectionHasChange: false, selection: 'Streaming' }
-  );
+  const [showMedia, setShowMedia] = useState('Streaming');
 
   // same as component did mount
   // whenever showMedia states then run this useEffect
@@ -18,10 +16,10 @@ const Section = ({
     // make api call with category and type
   }, []);
 
-  const handleSelection = (media) => {
-    setShowMedia((prevState) => prevState);
-  };
-  const { title } = MEDIA_MAP[type];
+  // const handleSelection = (media) => {
+  //   setShowMedia((prevState) => prevState);
+  // };
+  const { title, options = '' } = MEDIA_MAP[type];
 
   return (
     <div className="section">
@@ -29,9 +27,9 @@ const Section = ({
         <div className="column-header">
           <h2>{title}</h2>
           <SelectionGroup
-            handleSelection={handleSelection}
+            handleSelection={setShowMedia}
             showMedia={showMedia}
-            mediaOptions={MEDIA_MAP[type] || ''}
+            options={options}
           />
         </div>
       ) : ''}

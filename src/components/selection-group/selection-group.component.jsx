@@ -2,7 +2,7 @@ import React from 'react';
 import Selector from '../selector/selector.component';
 
 const SelectionGroup = ({
-  handleSelection, showMedia, mediaOptions: { options }
+  handleSelection, showMedia, options
 }) => (
   <div className="selection-group">
     {

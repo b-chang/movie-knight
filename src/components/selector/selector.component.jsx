@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import SaveIcon from '@material-ui/icons/Save';
 import './selector.styles.scss';
 
 const Selector = ({
   className, children, handleSelection, showMedia
 }) => {
   const buttonHandler = (e) => {
-    if (e.value === showMedia.selection) {
-      showMedia.selectionHasChange = false;
+    if (e.value) {
+      handleSelection(e.value);
     }
-
-    if (e.value !== showMedia.selection) {
-      showMedia.selection = e.value;
-      showMedia.selectionHasChange = true;
-    }
-    handleSelection(showMedia);
   };
 
   return (
