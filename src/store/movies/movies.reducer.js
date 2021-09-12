@@ -36,6 +36,7 @@ const moviesTopRatedReducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+console.log('test"')
 
 const moviesTrendingReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

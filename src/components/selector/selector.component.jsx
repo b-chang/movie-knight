@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SaveIcon from '@material-ui/icons/Save';
 import './selector.styles.scss';
 
-const Selector = ({
-  className, children, handleSelection, showMedia
-}) => {
+const Selector = ({ className, children, handleSelection, showMedia }) => {
   const buttonHandler = (e) => {
     if (e.value) {
       handleSelection(e.value);

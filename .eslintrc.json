@@ -1,5 +1,7 @@
+/* eslint-disable eol-last */
 {
-    "extends": "airbnb",
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["prettier"],
     "rules": {
         "react/jsx-filename-extension": [
             1,
@@ -10,10 +12,7 @@
                 ]
             }
         ],
-        "eol-last": [
-            "error",
-            "never"
-        ],
+        "eol-last": 0,
         "comma-dangle": [
             "error",
             "never"
